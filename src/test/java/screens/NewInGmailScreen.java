@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
 public class NewInGmailScreen extends BaseScreen {
-    By gotItButton = By.id("com.google.android.gm:id/welcome_tour_got_it");
+    private By gotItButton = By.id("com.google.android.gm:id/welcome_tour_got_it");
 
 
     public NewInGmailScreen(AppiumDriver driver) {

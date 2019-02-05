@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+
 public abstract class BaseScreen {
 
     protected final AppiumDriver driver;
@@ -26,6 +28,12 @@ public abstract class BaseScreen {
 
     public void waitForElementToBeClicable(WebElement element){
         wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    public void waitForElementsToBeVisibility(By by){
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
+        List<WebElement> listOfElements = driver.findElements(by);
+        wait.until(ExpectedConditions.visibilityOfAllElements(listOfElements));
     }
 
 
