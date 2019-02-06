@@ -32,7 +32,6 @@ public class GotMailScreen extends BaseScreen {
     private String getEmailFrom() {
         waitForVisibility(fromDetails);
         WebElement DromDetailsElement = driver.findElement(fromDetails);
-
         return DromDetailsElement.getText().replaceAll("([A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,6}$)", "");
     }
 

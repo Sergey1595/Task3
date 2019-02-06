@@ -41,8 +41,7 @@ public class SelectEmailScreen extends BaseScreen {
 
     public void pressToAddAnotherEmail() {
         waitForElementTobeClicable(addAnotherEmailBtn);
-        WebElement addAnotherEmailButton = driver.findElement(addAnotherEmailBtn);
-        addAnotherEmailButton.click();
+        driver.findElement(addAnotherEmailBtn).click();
     }
 
     //if email found return true
@@ -70,7 +69,6 @@ public class SelectEmailScreen extends BaseScreen {
 
     public void pressToTakeMeToGmail() {
         waitForElementTobeClicable(takeMeToGmailButton);
-        WebElement TakeMeToGmailBtn = driver.findElement(takeMeToGmailButton);
-        TakeMeToGmailBtn.click();
+        driver.findElement(takeMeToGmailButton).click();
     }
 }

@@ -19,8 +19,7 @@ public class EmailsPrimaryScreen extends BaseScreen {
 
     public void pressToWriteEmailBtn() {
         waitForElementsToBeVisibility(startWriteEmailBtn);
-        WebElement WriteEmailBtn = driver.findElement(startWriteEmailBtn);
-        WriteEmailBtn.click();
+        driver.findElement(startWriteEmailBtn).click();
     }
 
     public void pressToOpenMenyBtn() {

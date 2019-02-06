@@ -16,20 +16,17 @@ public class WriteEmailScreen extends BaseScreen {
 
     public void pressToWriteToField() {
         waitForElementsToBeVisibility(writeToField);
-        WebElement writeToFieldElem = driver.findElement(writeToField);
-        writeToFieldElem.click();
+        driver.findElement(writeToField).click();
     }
 
     public void pressTosubjectField() {
         waitForElementsToBeVisibility(subjectField);
-        WebElement toSubjectFieldElem = driver.findElement(subjectField);
-        toSubjectFieldElem.click();
+        driver.findElement(subjectField).click();
     }
 
     public void pressToComposeEmailField() {
         waitForElementsToBeVisibility(composeEmailField);
-        WebElement toComposeEmailFieldElem = driver.findElement(composeEmailField);
-        toComposeEmailFieldElem.click();
+        driver.findElement(composeEmailField).click();
     }
 
     public void writeEmailAdress(String Email) {
@@ -52,8 +49,7 @@ public class WriteEmailScreen extends BaseScreen {
 
     public void pressToSenMailBtn() {
         waitForElementTobeClicable(sendMailBtn);
-        WebElement sendMailButton = driver.findElement(sendMailBtn);
-        sendMailButton.click();
+        driver.findElement(sendMailBtn).click();
     }
 
 
