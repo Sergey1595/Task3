@@ -53,7 +53,7 @@ public class SelectEmailScreen extends BaseScreen {
         return false;
     }
 
-    public void clickOnFoundEmail(String email) {
+    public void pressOnFoundEmail(String email) {
         if (!checkOfExistSetupEmail(email))
             return;
         List<WebElement> emailsElement = getEmailsElement();

@@ -2,6 +2,7 @@ package screens;
 
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -18,19 +19,28 @@ public abstract class BaseScreen {
         this.wait = new WebDriverWait(driver, 25);
     }
 
+    public boolean isElementPresent(By by) {
+        try {
+            driver.findElement(by);
+            return true;
+        } catch (NoSuchElementException e) {
+            return false;
+        }
+    }
+
     public void waitForVisibility(By by) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }
 
-    public void waitForElementTobeClicable(By by){
+    public void waitForElementTobeClicable(By by) {
         wait.until(ExpectedConditions.elementToBeClickable(by));
     }
 
-    public void waitForElementToBeClicable(WebElement element){
+    public void waitForElementToBeClicable(WebElement element) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    public void waitForElementsToBeVisibility(By by){
+    public void waitForElementsToBeVisibility(By by) {
         wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
         List<WebElement> listOfElements = driver.findElements(by);
         wait.until(ExpectedConditions.visibilityOfAllElements(listOfElements));

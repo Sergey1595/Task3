@@ -3,7 +3,6 @@ package screens;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
 public class NewInGmailScreen extends BaseScreen {
@@ -18,5 +17,9 @@ public class NewInGmailScreen extends BaseScreen {
         WebElement btn = driver.findElement(gotItButton);
         waitForElementToBeClicable(btn);
         btn.click();
+    }
+
+    public boolean screenIsOpen() {
+        return isElementPresent(gotItButton);
     }
 }

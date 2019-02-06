@@ -12,6 +12,7 @@ public class WriteEmailScreen extends BaseScreen {
     private By writeToField = By.id("com.google.android.gm:id/to");
     private By subjectField = By.id("com.google.android.gm:id/subject");
     private By composeEmailField = By.id("com.google.android.gm:id/body_wrapper");
+    private By sendMailBtn = By.id("com.google.android.gm:id/send");
 
     public void pressToWriteToField() {
         waitForElementsToBeVisibility(writeToField);
@@ -31,21 +32,29 @@ public class WriteEmailScreen extends BaseScreen {
         toComposeEmailFieldElem.click();
     }
 
-    public void writeEmailAdress(String Email){
+    public void writeEmailAdress(String Email) {
         waitForElementsToBeVisibility(writeToField);
         WebElement writeToFieldElem = driver.findElement(writeToField);
         writeToFieldElem.sendKeys(Email);
     }
 
-    public void writeSubjectOfEmail(String subject){
+    public void writeSubjectOfEmail(String subject) {
         waitForElementsToBeVisibility(subjectField);
         WebElement writeSubjectOfEmail = driver.findElement(subjectField);
         writeSubjectOfEmail.sendKeys(subject);
     }
 
-    public void writeComposeOfEmail(String compose){
+    public void writeComposeOfEmail(String compose) {
         waitForElementsToBeVisibility(composeEmailField);
         WebElement writeComposeEmailField = driver.findElement(composeEmailField);
         writeComposeEmailField.sendKeys(compose);
     }
+
+    public void pressToSenMailBtn() {
+        waitForElementTobeClicable(sendMailBtn);
+        WebElement sendMailButton = driver.findElement(sendMailBtn);
+        sendMailButton.click();
+    }
+
+
 }

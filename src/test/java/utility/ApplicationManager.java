@@ -18,7 +18,8 @@ public class ApplicationManager {
         capabilities.setCapability("platformVersion", "8.1.0");
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("appPackage", "com.google.android.gm");
-        capabilities.setCapability("appActivity", "com.google.android.gm.GmailActivity");
+        //capabilities.setCapability("appActivity", "com.google.android.gm.GmailActivity");
+        capabilities.setCapability("appActivity", "com.google.android.gm.ui.MailActivityGmail");
         try {
             return new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
         } catch (Exception e) {
